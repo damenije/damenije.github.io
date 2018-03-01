@@ -1,16 +1,16 @@
 var flag = false;
 
 $(window).on('load', function() {
-    setTimeout(() => {
-        $('.preloader-wrapper').fadeOut();
-        $('body').removeClass('preloader-site');
-    }, 3000);
+    var Body = $('body');
+    Body.addClass('preloader-site');
 });
 
 $(function() {
 
-    var Body = $('body');
-    Body.addClass('preloader-site');
+    setTimeout(() => {
+        $('.preloader-wrapper').fadeOut();
+        $('body').removeClass('preloader-site');
+    }, 3000);
 
     setScroll('fullPage');
 
