@@ -8,6 +8,29 @@ html, body {
     height: 100%;
 }
 
+body.preloader-site {
+    overflow: hidden;
+}
+
+.preloader-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: #f8c000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
 #home {
     width: 100%;
     height: 100vh;
@@ -95,8 +118,14 @@ img {
     cursor: pointer;
 }
 
-.menu ul li:after {
+.menu ul li span {
+    position: relative;
+}
+
+.menu ul li span:after {
     content: '';
+    left: 0;
+    position: absolute;
     display: block;
     background: white;
     width: 0;
@@ -104,7 +133,7 @@ img {
     transition: all .3s ease-in-out;
 }
 
-.menu ul li:hover:after {
+.menu ul li span:hover:after {
     width: 100%;
 }
 

@@ -1,6 +1,16 @@
 var flag = false;
 
+$(window).on('load', function() {
+    setTimeout(() => {
+        $('.preloader-wrapper').fadeOut();
+        $('body').removeClass('preloader-site');
+    }, 3000);
+});
+
 $(function() {
+
+    var Body = $('body');
+    Body.addClass('preloader-site');
 
     setScroll('fullPage');
 
@@ -28,6 +38,7 @@ $(function() {
     });
 
 });
+
 this.setScroll = (selector) => {
     $('.' + selector).fullpage({
         css3: false,
