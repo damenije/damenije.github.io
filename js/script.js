@@ -1,16 +1,11 @@
 var flag = false;
-
-$(window).on('load', function() {
-    var Body = $('body');
-    Body.addClass('preloader-site');
-});
+var slideIndex = 1;
 
 $(function() {
 
-    setTimeout(() => {
-        $('.preloader-wrapper').fadeOut();
-        $('body').removeClass('preloader-site');
-    }, 3000);
+    $('.preloader-wrapper').fadeOut('slow', () => {
+        $(this).remove();
+    });
 
     setScroll('fullPage');
 
@@ -18,11 +13,7 @@ $(function() {
 
     $('.day').append(getDate());
 
-    $('.carousel').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false
-    });
+    showSlides(slideIndex);
 
     $('#goToHome').click(() => {
         $.fn.fullpage.moveTo('homeSection');
@@ -39,6 +30,21 @@ $(function() {
 
 });
 
+this.plusSlides = (n) => {
+    showSlides(slideIndex += n);
+}
+
+this.showSlides = (n) => {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        $(slides[i]).css({ "display": 'none' });
+    }
+    $(slides[slideIndex-1]).css({ "display": 'block' });
+  }
+
 this.setScroll = (selector) => {
     $('.' + selector).fullpage({
         css3: false,
@@ -48,9 +54,11 @@ this.setScroll = (selector) => {
         parallax: true,
         dragAndMove: true,
         onLeave: function(index, nextIndex, direction) {
+            console.log('onLeave: ' + index);
             fadeOut();
         },
         afterLoad: function(anchorLink, index) {
+            console.log('afterLoad: ' + index);
             if(index === 2) {
                 textBlack();
             } else {
