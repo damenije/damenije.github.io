@@ -282,6 +282,9 @@
     width: 80%;
     margin: 0 auto;
   }
+  #about {
+    /* font-family: 'Poppins', sans-serif; */
+  }
   #about h1 {
     padding-top: 150px;
     text-align: left;

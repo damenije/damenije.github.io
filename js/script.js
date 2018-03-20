@@ -1,11 +1,13 @@
 var flag = false;
 var slideIndex = 1;
 
-$(function() {
-
+$(window).on('load', function() {
     $('.preloader-wrapper').fadeOut('slow', () => {
         $(this).remove();
     });
+});
+
+$(function() {
 
     setScroll('fullPage');
 
