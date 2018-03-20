@@ -12,6 +12,7 @@
   }
   
   .preloader-wrapper {
+    display: block;
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -20,6 +21,8 @@
     top: 0;
     left: 0;
     z-index: 9999999;
+    opacity: 1;
+    transition: all .3s ease-in-out;
   }
   
   .preloader-wrapper .preloader {
@@ -85,9 +88,19 @@
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
+
+  .titleContainer img {
+    filter: drop-shadow(0px 0px .5rem #FF9E62);
+    box-shadow: none;
+  }
   
   img {
     max-width: 100% !important;
+  }
+
+  .preloader img {
+    filter: none;
+    box-shadow: none;
   }
   
   .title {
@@ -361,6 +374,24 @@
     position: relative;
     margin: auto;
   }
+  .time {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+  #map {
+    width:100%;
+    height:400px;
+  }
+  #map img {
+    filter: none;
+    box-shadow: none;
+  }
   .mySlides {
     display: none;
   }
@@ -428,17 +459,12 @@
       grid-row-gap: 30px;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px), (max-height: 768px) {
     .bottom {
-      -ms-grid-columns: 1fr;
-          grid-template-columns: 1fr;
-    }
-    .bottom div:nth-child(1) {
-      -ms-grid-column-align: center;
-          justify-self: center;
-    }
-    .bottom div:nth-child(2) {
       display: none;
+    }
+    .time {
+      display: block;
     }
     #facebook {
       display: inline-block;
@@ -452,12 +478,19 @@
       clear: both;
     }
   }
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 576px), (max-height: 576px) {
+    * {
+      text-align: center;
+    }
+    .grid2 p {
+      border: none;
+      padding: 0;
+    }
     .title {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     #about h1:after {
-      width: 55px;
+      width: 40px;
     }
     .menu ul {
       position: absolute;
@@ -469,5 +502,23 @@
     }
     .menu ul li {
       text-align: center;
+      font-size: 1.9rem;
+    }
+  }
+
+  @media screen and (max-height: 680px), (max-width: 680) {
+    #map {
+      width:100%;
+      height:250px;
+    }
+  }
+
+  @media screen and (max-height: 480) {
+    .menu ul li {
+      font-size: 1rem;
+    }
+
+    .time p {
+      font-size: 10px !important;
     }
   }

@@ -1,11 +1,11 @@
 var flag = false;
 var slideIndex = 1;
 
-$(window).on('load', function() {
-    $('.preloader-wrapper').fadeOut('slow', () => {
-        $(this).remove();
-    });
-});
+document.onreadystatechange = () => {
+    setTimeout(() => {
+        document.querySelector('.preloader-wrapper').style.display = 'none';
+    }, 3000);
+}
 
 $(function() {
 
