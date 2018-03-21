@@ -90,7 +90,7 @@
   }
 
   .titleContainer img {
-    filter: drop-shadow(0px 0px .5rem #FF9E62);
+    /* filter: drop-shadow(0px 0px .5rem #FF9E62); */
     box-shadow: none;
   }
   
@@ -133,7 +133,7 @@
   .menu ul {
     position: absolute;
     top: 100px;
-    right: 20px;
+    right: 40px;
   }
   
   .menu ul li {
@@ -210,7 +210,7 @@
     left: 0;
   }
   
-  .bottom {
+  .bottom2 {
     position: fixed;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -224,7 +224,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 40px;
+    padding: 0 40px 40px 40px;
     z-index: 3;
     bottom: 0;
     opacity: 1;
@@ -234,22 +234,22 @@
     transition: all 0.5s ease-in-out;
   }
   
-  .bottom div:nth-child(1) {
+  .bottom2 div:nth-child(1) {
     -ms-grid-column-align: start;
         justify-self: start;
   }
   
-  .bottom div:nth-child(2) {
+  .bottom2 div:nth-child(2) {
     -ms-grid-column-align: end;
         justify-self: end;
   }
   
-  .bottom ul li {
+  .bottom2 ul li {
     list-style: none;
     display: inline-block;
   }
   
-  .bottom ul li a {
+  .bottom2 ul li a {
     color: white;
   }
   
@@ -294,13 +294,16 @@
   .container {
     width: 80%;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
   #about {
-    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
   }
   #about h1 {
-    padding-top: 150px;
+    padding-top: 110px;
     text-align: left;
+    font-family: 'Times New Roman', Times, serif;
   }
   #about h1:after {
     content: "";
@@ -361,7 +364,8 @@
             align-items: center;
   }
   #location {
-    background-color: black;
+    background-color: white;
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
   }
   #facebook {
     display: none;
@@ -430,6 +434,87 @@
     animation-name: fade;
     animation-duration: 1.5s;
   }
+  #gallery {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+  }
+  #gallery h1 {
+    color: white;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding-top: 110px;
+  }
+  #gallery h1:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 75px;
+    height: 5px;
+    background: #ffa159;
+  }
+  .galleryContainer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .galleryContainer img {
+    display: none;
+    cursor: pointer;
+  }
+  .galleryBtn {
+    display: inline-block;
+    text-decoration-line: none;
+    border: 1px solid white;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: all .3s ease-in-out;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .galleryBtn:hover {
+    background-color: white;
+    color: black;
+  }
+  #events {
+    background: url("../img/events.jpg") center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+  }
+  #events:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.95;
+    z-index: 0;
+  }
+  #events h1 {
+    color: white;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 110px;
+  }
+  #events h1:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 75px;
+    height: 5px;
+    background: #ffa159;
+  }
+  #event {
+    margin: auto;
+  }
   @-webkit-keyframes fade {
     from {
       opacity: 0.4;
@@ -458,9 +543,12 @@
         "text";
       grid-row-gap: 30px;
     }
+    .galleryContainer {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   @media screen and (max-width: 768px), (max-height: 768px) {
-    .bottom {
+    .bottom2 {
       display: none;
     }
     .time {
@@ -480,7 +568,7 @@
   }
   @media screen and (max-width: 576px), (max-height: 576px) {
     * {
-      text-align: center;
+      text-align: center !important;
     }
     .grid2 p {
       border: none;
@@ -490,7 +578,20 @@
       font-size: 3rem;
     }
     #about h1:after {
-      width: 40px;
+      content: none;
+    }
+    .galleryContainer {
+      grid-template-columns: 1fr;
+    }
+    #events h1:after {
+      content: none;
+    }
+    #gallery h1 {
+      float: none;
+    }
+
+    #gallery h1:after {
+      content: none;
     }
     .menu ul {
       position: absolute;

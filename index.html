@@ -6,8 +6,11 @@
     <title>da me nije | gradiška</title>
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -33,10 +36,10 @@
             <li id="goToAbout">
                 <span>О нама</span>
             </li>
-            <li id="goToHome">
+            <li id="goToGallery">
                 <span>Галерија</span>
             </li>
-            <li id="goToAbout">
+            <li id="goToEvents">
                 <span>Догађаји</span>
             </li>
             <li id="goToLocation">
@@ -53,6 +56,7 @@
                 </a>
             </li>
         </ul>
+        <div style="clear:both;"></div>
         <div class="time">
             <p class="day">
                 <strong>Радно вријеме:</strong>
@@ -81,7 +85,7 @@
                     <span></span>
                 </div>
             </nav>
-            <div class="bottom">
+            <div class="bottom2">
                 <div>
                     <p class="day">
                         <strong>Радно вријеме:</strong>
@@ -110,7 +114,7 @@
 
         <section id="about" class="section">
             <div class="container">
-                <h1 class="title">О НАМА</h1>
+                <h1 class="title">О нама</h1>
                 <div class="grid1">
                     <img src="img/about-1.jpg" alt="">
                     <p>
@@ -181,6 +185,41 @@
             </div>
         </section>
 
+        <section id="gallery" class="section">
+            <div class="container">
+                <h1 class="title">Галерија</h1>
+                <div style="clear:both;"></div>
+                <div class="galleryContainer" style="padding: 75px 0 75px 0;"></div>
+                <div style="padding-bottom: 110px; text-align: center;">
+                    <a href="#" class="galleryBtn">Прикажи више</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="section">
+            <div class="container" style="text-align: center;">
+                <!-- <h1 class="title">Догађаји</h1> -->
+                <div style="max-width: 1000px;" id="event">
+                    <div class="slider-for">
+                        <div><img src="img/gallery-1.jpg" alt=""></div>
+                        <div><img src="img/gallery-2.jpg" alt=""></div>
+                        <div><img src="img/gallery-3.jpg" alt=""></div>
+                        <div><img src="img/gallery-4.jpg" alt=""></div>
+                        <div><img src="img/gallery-5.jpg" alt=""></div>
+                        <div><img src="img/gallery-6.jpg" alt=""></div>
+                    </div>
+                    <div class="slider-nav">
+                        <div><img src="img/gallery-1.jpg" alt=""></div>
+                        <div><img src="img/gallery-2.jpg" alt=""></div>
+                        <div><img src="img/gallery-3.jpg" alt=""></div>
+                        <div><img src="img/gallery-4.jpg" alt=""></div>
+                        <div><img src="img/gallery-5.jpg" alt=""></div>
+                        <div><img src="img/gallery-6.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="location" class="section">
             <div id="map"></div>
         </section>
@@ -190,6 +229,7 @@
     <script type="text/javascript" src="js/scrolloverflow.js" defer></script>
     <script type="text/javascript" src="js/jquery.fullpage.extensions.min.js" defer></script>
     <!-- <script type="text/javascript" src="js/jquery.fullpage.min.js" defer></script> -->
+    <script type="text/javascript" src="js/slick.min.js" defer></script>
     <script type="text/javascript" src="js/script.js" defer></script>
     <script>
         function initMap() {
